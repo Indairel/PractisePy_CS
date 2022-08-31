@@ -33,47 +33,46 @@ class Employee:
             return False
         return True
 
-# print(Employee.num_of_emps)
+class Developer(Employee):
+    raise_amt = 1.1
+    # pass
+    def __init__(self, first, last, pay, prog_lang):
+        super().__init__(first, last, pay)
+        self.prog_lang = prog_lang
 
-emp_1 = Employee('Test', 'Best', 59999)
-emp_2 = Employee('Easy', 'Peasy', 48888)
+class Manager(Employee):
 
-import datetime
-my_date = datetime.date(2022, 8, 28)
+    def __init__(self, first, last, pay, employees=None):
+        super().__init__(first, last, pay)
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
 
-print(Employee.is_workday(my_date))
+    def add_emp(self, emp):
+        if emp not in self.employees:
+            self.employees.append(emp)
 
-# emp_str_1 = 'John-Doe-69999'
-# emp_str_2 = 'Jack-Smith-55555'
-# emp_str_3 = 'Ytsy-Pytsy-40000'
+    def remove_emp(self, emp):
+        if emp in self.employees:
+            self.employees.remove(emp)
 
-# new_emp_1 = Employee(first, last, pay)
-# new_emp_1 = Employee.from_string(emp_str_1)
+    def print_emps_list(self):
+        for emp in self.employees:
+            print('-->', emp.fullname())
+
+dev_1 = Developer('Test', 'Best', 59999, 'Python')
+dev_2 = Developer('Easy', 'Peasy', 48888, 'Java')
+
+mgr_1 = Manager('Panna', 'Sanna', 90000, [dev_1])
+
+# print(mgr_1.email)
 #
-# print(new_emp_1.email)
-# print(new_emp_1.pay)
+# mgr_1.add_emp(dev_2)
+# mgr_1.remove_emp(dev_1)
+#
+# mgr_1.print_emps_list()
 
-# Employee.set_raise_amt(1.05)
+print(isinstance(mgr_1, Developer))
 
-# print(Employee.num_of_emps)
-
-# print(emp_1)
-# print(emp_2)
-
-# print(emp_1.email)
-# print(emp_2.email)
-
-# emp_1.fullname()
-# Employee.fullname(emp_1)
-# print(emp_1.fullname())
-
-# print(Employee.__dict__)
-
-# emp_1.raise_amount = 1.05
-
-# print(Employee.raise_amt)
-# print(emp_1.raise_amt)
-# print(emp_2.raise_amt)
-
-# emp_1.raise_amount
-# Employee.raise_amount
+print(issubclass(Manager, Employee))
