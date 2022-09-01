@@ -1,3 +1,20 @@
+# print(emp_1 + emp_2)
+
+# mgr_1 = Manager('Panna', 'Sanna', 90000, [dev_1])
+
+# print(emp_1)
+
+# print(mgr_1.email)
+#
+# mgr_1.add_emp(dev_2)
+# mgr_1.remove_emp(dev_1)
+#
+# mgr_1.print_emps_list()
+
+# print(isinstance(mgr_1, Developer))
+#
+# print(issubclass(Manager, Employee))
+
 # print(help(Developer))
 
 # print(dev_1.email)

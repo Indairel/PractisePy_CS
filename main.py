@@ -18,6 +18,17 @@ class Employee:
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amt)
 
+    def __repr__(self):
+        return "Employee('{}', '{}', '{}')".format(self.first, self.last, self.pay)
+
+    def __str__(self):
+        return '{} - {}'.format(self.fullname(), self.email)
+
+    def __len__(self):
+        return len(self.fullname())
+
+    def __add__(self, other):
+        return self.pay + other.pay
     @classmethod
     def set_raise_amt(cls, amount):
         cls.raise_amt = amount
@@ -61,18 +72,23 @@ class Manager(Employee):
         for emp in self.employees:
             print('-->', emp.fullname())
 
-dev_1 = Developer('Test', 'Best', 59999, 'Python')
-dev_2 = Developer('Easy', 'Peasy', 48888, 'Java')
+emp_1 = Developer('Test', 'Best', 59999, 'Python')
+emp_2 = Developer('Easy', 'Peasy', 48888, 'Java')
 
-mgr_1 = Manager('Panna', 'Sanna', 90000, [dev_1])
+print(len(emp_1))
 
-# print(mgr_1.email)
+# print(len('test'))
+
+# print('test'.__len__())
+
+# print(repr(emp_1))
+# print(str(emp_1))
+
+# print(emp_1.__repr__())
+# print(emp_1.__str__())
+
+# print(1+2)
 #
-# mgr_1.add_emp(dev_2)
-# mgr_1.remove_emp(dev_1)
-#
-# mgr_1.print_emps_list()
+# print(int.__add__(1, 2))
+# print(str.__add__('a', 'b'))
 
-print(isinstance(mgr_1, Developer))
-
-print(issubclass(Manager, Employee))
