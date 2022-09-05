@@ -1,3 +1,18 @@
+# print(len('test'))
+
+# print('test'.__len__())
+
+# print(repr(emp_1))
+# print(str(emp_1))
+
+# print(emp_1.__repr__())
+# print(emp_1.__str__())
+
+# print(1+2)
+
+# print(int.__add__(1, 2))
+# print(str.__add__('a', 'b'))
+
 # print(emp_1 + emp_2)
 
 # mgr_1 = Manager('Panna', 'Sanna', 90000, [dev_1])
