@@ -12,6 +12,7 @@ class Tomato_Soup(Broth):
     def add_new_ingredient(self):
         print("Pasta, liha, vihannekset, sipuli, suola, tomaatti")
 
+
 cooking_soup = Tomato_Soup()
 print("Tomato soup cook time:", cooking_soup.cook_time)
 print("Broth cook time:", Broth().cook_time)
